@@ -25,4 +25,8 @@ public class User {
     public User(@NotBlank @Email String email) {
         this.email = email;
     }
+
+    public Long getId() {
+        return this.id;
+    }
 }

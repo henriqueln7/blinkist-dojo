@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.Map;
 
 @RestController
 public class NewUserController {
@@ -16,8 +17,8 @@ public class NewUserController {
     }
 
     @PostMapping("/users")
-    public void newUser(@Valid @RequestBody NewUserRequest request) {
-        User newUser = request.toUser();
-        userRepository.save(newUser);
+    public Map<String, Long> newUser(@Valid @RequestBody NewUserRequest request) {
+        User persistedUser = userRepository.save(request.toUser());
+        return Map.of("id", persistedUser.getId());
     }
 }
