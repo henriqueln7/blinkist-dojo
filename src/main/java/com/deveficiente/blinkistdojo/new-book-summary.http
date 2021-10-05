@@ -1,12 +1,16 @@
-POST http://localhost:8080/summaries
+POST http://localhost:8080/bookSummaries
 Content-Type: application/json
 
 {
   "bookTitle": "Deep Work By Cal Newport",
-  "bookChapterSummary": [
+  "chapterSummaries": [
     {
-      "chapterTitle": "Deep Work is Valuable",
+      "title": "Deep Work is Valuable",
       "summary": "In this chapter..."
+    },
+    {
+      "title": "Bla bla bla",
+      "summary": "Alooooo"
     }
   ]
 }

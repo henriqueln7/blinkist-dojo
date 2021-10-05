@@ -8,8 +8,8 @@ import javax.validation.Valid;
 
 @RestController
 public class NewBookSummaryController {
-    @PostMapping("/summaries")
+    @PostMapping("/bookSummaries")
     public void newBookSummary(@Valid @RequestBody NewBookSummaryRequest request) {
-        System.out.println("chegooou");
+        System.out.println(request);
     }
 }
