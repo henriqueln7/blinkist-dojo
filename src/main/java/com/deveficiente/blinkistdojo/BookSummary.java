@@ -14,7 +14,8 @@ public class BookSummary {
 
     private final String bookTitle;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "book_summary_id")
     private List<BookChapterSummary> chapterSummaries = new ArrayList<>();
 
     @Deprecated
@@ -25,5 +26,9 @@ public class BookSummary {
     public BookSummary(@NotBlank String bookTitle, List<BookChapterSummary> chapterSummaries) {
         this.bookTitle = bookTitle;
         this.chapterSummaries.addAll(chapterSummaries);
+    }
+
+    public Long getId() {
+        return this.id;
     }
 }

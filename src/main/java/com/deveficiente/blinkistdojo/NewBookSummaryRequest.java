@@ -1,9 +1,11 @@
 package com.deveficiente.blinkistdojo;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NewBookSummaryRequest {
     @NotBlank
@@ -11,6 +13,7 @@ public class NewBookSummaryRequest {
 
     @Size(min = 1)
     @NotNull
+    @Valid
     private List<BookChapterSummaryRequest> chapterSummaries;
 
     public NewBookSummaryRequest(String bookTitle, List<BookChapterSummaryRequest> chapterSummaries) {
@@ -19,13 +22,11 @@ public class NewBookSummaryRequest {
     }
 
     public BookSummary toBookSummary() {
-        return new BookSummary(this.bookTitle,
-                               this.chapterSummaries.stream().map(s -> s.toChapterSummary()).toList());
-    }
-
-    @Override
-    public String toString() {
-        return "NewBookSummaryRequest{" + "bookTitle='" + bookTitle + '\'' + ", chapterSummaries=" + chapterSummaries + '}';
+        List<BookChapterSummary> chapterSummaries = this.chapterSummaries
+                .stream()
+                .map(BookChapterSummaryRequest::toChapterSummary)
+                .collect(Collectors.toList());
+        return new BookSummary(this.bookTitle, chapterSummaries);
     }
 }
 
@@ -38,11 +39,6 @@ class BookChapterSummaryRequest {
     public BookChapterSummaryRequest(String title, String summary) {
         this.title = title;
         this.summary = summary;
-    }
-
-    @Override
-    public String toString() {
-        return "BookChapterSummary{" + "title='" + title + '\'' + ", summary='" + summary + '\'' + '}';
     }
 
     public BookChapterSummary toChapterSummary() {

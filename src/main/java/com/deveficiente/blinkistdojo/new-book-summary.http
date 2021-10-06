@@ -2,15 +2,15 @@ POST http://localhost:8080/bookSummaries
 Content-Type: application/json
 
 {
-  "bookTitle": "Deep Work By Cal Newport",
+  "bookTitle": "Manual do Dev Eficiente",
   "chapterSummaries": [
     {
-      "title": "Deep Work is Valuable",
-      "summary": "In this chapter..."
+      "title": "Escreva só o necessário",
+      "summary": "Aqui........ resumo...."
     },
     {
-      "title": "Bla bla bla",
-      "summary": "Alooooo"
+      "title": "Só implemente o que foi pedido",
+      "summary": "Não implemente.............................."
     }
   ]
 }
