@@ -1,4 +1,4 @@
-package com.deveficiente.blinkistdojo;
+package com.deveficiente.blinkistdojo.booksummary;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

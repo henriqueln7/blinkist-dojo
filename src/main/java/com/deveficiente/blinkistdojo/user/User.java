@@ -1,4 +1,4 @@
-package com.deveficiente.blinkistdojo;
+package com.deveficiente.blinkistdojo.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

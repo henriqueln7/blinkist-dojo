@@ -1,4 +1,4 @@
-package com.deveficiente.blinkistdojo;
+package com.deveficiente.blinkistdojo.user;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

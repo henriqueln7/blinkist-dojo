@@ -1,4 +1,4 @@
-package com.deveficiente.blinkistdojo;
+package com.deveficiente.blinkistdojo.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

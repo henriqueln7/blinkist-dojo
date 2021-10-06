@@ -1,8 +1,9 @@
-package com.deveficiente.blinkistdojo;
+package com.deveficiente.blinkistdojo.booksummary;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,12 +37,17 @@ class BookChapterSummaryRequest {
     @NotBlank
     private String summary;
 
-    public BookChapterSummaryRequest(String title, String summary) {
+    @NotNull
+    @Positive
+    private int chapterOrder;
+
+    public BookChapterSummaryRequest(String title, String summary, int chapterOrder) {
         this.title = title;
         this.summary = summary;
+        this.chapterOrder = chapterOrder;
     }
 
     public BookChapterSummary toChapterSummary() {
-        return new BookChapterSummary(this.title, this.summary);
+        return new BookChapterSummary(this.title, this.summary, this.chapterOrder);
     }
 }

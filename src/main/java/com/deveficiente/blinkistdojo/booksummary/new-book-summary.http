@@ -6,11 +6,13 @@ Content-Type: application/json
   "chapterSummaries": [
     {
       "title": "Escreva só o necessário",
-      "summary": "Aqui........ resumo...."
+      "summary": "Aqui........ resumo....",
+      "chapterOrder": 1
     },
     {
       "title": "Só implemente o que foi pedido",
-      "summary": "Não implemente.............................."
+      "summary": "Não implemente..............................",
+      "chapterOrder": 2
     }
   ]
 }
